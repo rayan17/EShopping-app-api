@@ -48,7 +48,7 @@ exports.updateCategory = function(req, res){
 exports.deleteCategory = function(req, res){
 	Categories.remove({_id: req.params.category_id}, function (err, data){
 		if(err){
-			res.status(500).send({message: "Could not delete item with id" + req.params.category_id)});
+			res.status(500).send({message: "Could not delete item with id" + req.params.category_id});
 		}else{
 			res.send({message: "Item deleted successfully!	"})
 		}
