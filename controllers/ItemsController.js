@@ -33,7 +33,7 @@ exports.addItem = function(req, res){
 };
 
 exports.updateItem = function(req, res){
-	Items.findById(req.params.item, function(err, i){
+	Items.findById(req.params.item_id, function(err, i){
 		if(err){
 			res.send(err);
 		}

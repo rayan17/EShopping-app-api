@@ -29,7 +29,7 @@ exports.addCategory = function(req, res){
 };
 
 exports.updateCategory = function(req, res){
-	Categories.findById(req.params.cat, function(err, cat){
+	Categories.findById(req.params.category_id, function(err, cat){
 		if(err){
 			res.send(err);
 		}
