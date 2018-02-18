@@ -34,6 +34,8 @@ router.post('/items', itemsController.addItem);
 
 router.put('/items/:item_id', itemsController.updateItem);
 
+router.delete('/items/:item_id', itemsController.deleteItem);
+
 //Category routes
 router.get('/categories', categoriesController.allCategories);
 
@@ -42,5 +44,7 @@ router.get('/categories/:category_id', categoriesController.findCategoryById);
 router.post('/categories', categoriesController.addCategory);
 
 router.put('/categories/:category_id', categoriesController.updateCategory);
+
+router.delete('/categories/:category_id', categoriesController.deleteCategory);
 
 

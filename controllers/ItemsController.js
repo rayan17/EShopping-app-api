@@ -51,3 +51,13 @@ exports.updateItem = function(req, res){
 		});
 	});
 };
+
+exports.deleteItem = function(req, res){
+	Items.remove({_id: req.params.item_id}, function (err, data){
+		if(err){
+			res.status(500).send({message: "Could not delete item with id" + req.params.item_id)});
+		}else{
+			res.send({message: "Item deleted successfully!	"})
+		}
+	});
+};
