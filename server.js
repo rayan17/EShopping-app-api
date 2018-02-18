@@ -10,7 +10,7 @@ var categoriesController	= require('./controllers/CategoriesController');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
-var port = process.env.port || 3000;
+var port = process.env.port || 8090;
 var router = express.Router();
 
 app.use(cors());
@@ -24,6 +24,10 @@ mongoose.connect('mongodb://localhost:27017/products');
 router.use(function(req, res, next){
 	console.log('Logging of request will be done here');
 	next();
+});
+
+router.get('/', function(req, res){
+	res.send('Shopping Node API Sever');
 });
 //Items routes
 router.get('/items', itemsController.allItems);
